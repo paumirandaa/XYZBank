@@ -6,8 +6,7 @@ Este proyecto emplea Cypress con Cucumber (Gherkin) para automatizar los casos d
 # 💻 Pre-requisites
 
 1. Node JS
-2. Opcional: Java 8 for Allure Reporter
-3. Opcional: Json-formatter for Native Reporter option(depends on your OS: https://github.com/cucumber/json-formatter)
+
 
 ## Instalación de dependencias
 
