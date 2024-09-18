@@ -4,10 +4,21 @@ import { customerPage } from "../../pages/CustomerPage";
 import { managerPage } from "@pages/ManagerPage";
 import { accountPage } from "@pages/AccountPage";
 
+
 Given('el usuario esta en la página de inicio de sesión', () => {
   cy.visit("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
   cy.wait(10)
 });
+
+Given('el usuario inicia sesión como {string}',(user)=>{
+  if (user === "Cliente"){
+    cy.loginAsCustomer('Harry Potter');
+  } else if (user === "Manager"){
+    cy.loginAsManager();
+  }
+});
+
+
 
 Then('visualiza el título {string}', (titleText) => {
   loginPage.verifyTitle(titleText);
@@ -27,6 +38,8 @@ When('hace click en el botón {string}', (button) => {
     accountPage.clickwithdrawBtn();
   } else if (button === "Transactions"){
     accountPage.clicktransactionsBtn();
+  } else if (button === "Logout"){
+    accountPage.clicklogoutBtn();
   }
 });
 
@@ -43,3 +56,8 @@ Then('visualiza los botones "Add Customer", "Open Account" y "Customers" habilit
   managerPage.verifyButtonsVisibleAndEnabled();
 });
 
+Then('se cierra la sesión', ()=>{
+  customerPage.customerVisible();
+  cy.url().should('eq', 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/customer');
+
+})

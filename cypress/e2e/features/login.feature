@@ -14,3 +14,8 @@ Feature: Login Page
     When hace click en el botón "Bank Manager Login"
     Then se visualizan los botones "Add Customer", "Open Account" y "Customers"
 
+  Scenario: El usuario cierra sesión como cliente
+    Given el usuario esta en la página de inicio de sesión
+    And el usuario inicia sesión como "Cliente"
+    When hace click sobre el botón "Logout"
+    Then se cierra la sesión

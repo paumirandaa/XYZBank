@@ -3,6 +3,10 @@ import { accountPage } from "@pages/AccountPage";
 import { listTxPage } from "@pages/TransactionsListTxPage";
 
 
+Given('el cliente realiza un deposito', ()=>{
+    cy.realizarDeposito();
+})
+
 When('se valida que se visualiza el texto', ()=>{
     accountPage.verifyAmountToBeWithdrawnText();
 })
@@ -13,6 +17,7 @@ When('se visualiza el campo {string}', (campo)=>{
         cy.wait(1000)
     } 
 });
+
 
 When('ingresa el monto {string}', (amount)=>{
     cy.log("ingresa el monto");

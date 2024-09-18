@@ -6,8 +6,6 @@ Este proyecto emplea Cypress con Cucumber (Gherkin) para automatizar los casos d
 # 💻 Pre-requisites
 
 1. Node JS
-2. Opcional: Java 8 for Allure Reporter
-3. Opcional: Json-formatter for Native Reporter option(depends on your OS: https://github.com/cucumber/json-formatter)
 
 ## Instalación de dependencias
 
@@ -40,7 +38,7 @@ El proyecto contiene la siguiente estructura de carpetas:
 - **.gitignore**: Archivos o carpetas que no se desean versional
 - **cypress.config.js:** Archivo que contiene la configuración de URL, dependecias y plugins.
 - **package:** Listado de dependencias npm necesarias para el proyecto.
-- **Readme:** Documentación principal del proyecto de automation.
+- **Readme:** Documentación principal del proyecto.
 
 ## Configuraciones Básicas
 
@@ -53,3 +51,6 @@ Contiene:
 - **setupNodeEvents:** Función en la que se pueden registrar eventos de nodos y modificar la configuración. Lo que en versiones de cypress 9 o anterior se configuraba en "Plugins", ahora debe configurarse en este sitio.
 - **specPattern:** Tipo de archivos que conforman las pruebas (.feature)
 - **chromeWebSecurity:** Al desabilitarlo permite cargar sitios cuya url de origen es diferente de la url que se está testeando (muchas páginas emplean otros dominios para el login o imágenes por ejemplo).
+- **execTimeout:** Esperar a que cy.exec() se resuelva antes de que se agote el tiempo de espera.
+- - **defaultCommandTimeout:** Tiempo, en milisegundos, de espera hasta que la mayoría de los comandos basados en DOM se consideren agotados. (Por defecto era 4000)
+- **defaultpageLoadTimeout:** Tiempo, en milisegundos, de espera hasta que se descarga la nueva página. (Por defecto era 4000).

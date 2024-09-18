@@ -1,5 +1,6 @@
 class AccountPage{
     elements = {
+        logoutBtn: () => cy.get('button[ng-click="byebye()"]'),
         transactionsBtn: () => cy.get('button[ng-click="transactions()"]'),
         depositBtn: () => cy.get('button[ng-click="deposit()"]'),
         withdrawBtn: () => cy.get('[ng-class="btnClass3"]'),
@@ -18,6 +19,11 @@ class AccountPage{
     clickdepositBtn(){
         this.elements.depositBtn().click();
     }
+
+    clicklogoutBtn(){
+        this.elements.logoutBtn().click();
+    }
+
     clickwithdrawBtn(){
         this.elements.withdrawBtn().click();
         cy.wait(1000) // Ajusta el tiempo si es necesario

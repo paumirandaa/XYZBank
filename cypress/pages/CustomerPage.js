@@ -6,7 +6,12 @@ class CustomerPage{
 
     selectCustomer(customerName) {
         this.elements.customerDropdown().select(customerName);
-      }
+    }
+
+    customerVisible(){
+        this.elements.customerDropdown().should('be.visible');
+    }
+    
     
     clickBtnLogin(){
         this.elements.loginBtn().click();
